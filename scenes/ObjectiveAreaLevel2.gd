@@ -1,18 +1,17 @@
 extends Area2D
 
-@export var next_level_path: String = "res://scenes/Level2.tscn"
-@export var accepted_ship_name: String = "BlueShip"
+@export var next_level_path: String = "res://scenes/MainLevel.tscn"
+@export var accepted_ship_name: String = "GreenShip"
 
 var _victory_shown := false
 
 func _on_ObjectiveArea_body_entered(body: RigidBody2D):
 	if body.name == accepted_ship_name and not _victory_shown:
 		_victory_shown = true
-		print("Reached objective!")
 		_show_victory_and_transition()
 
 func _show_victory_and_transition():
-	# Freeze the ship so it stays in place
+	# Freeze the ship
 	var ship = get_tree().current_scene.find_child(accepted_ship_name, true, false)
 	if ship:
 		if ship.has_method("set_movement_locked"):
@@ -28,13 +27,10 @@ func _show_victory_and_transition():
 	label.set_anchors_preset(Control.PRESET_CENTER)
 	label.position = Vector2(-150, -30)
 	label.size = Vector2(300, 60)
-	label.modulate = Color(0.3, 0.5, 1.0)
+	label.modulate = Color(0.2, 1.0, 0.3)
 	get_tree().current_scene.add_child(label)
 
-	# Wait then transition to next level
+	# Wait then transition
 	await get_tree().create_timer(2.0).timeout
 
-	if next_level_path != "":
-		get_tree().change_scene_to_file(next_level_path)
-	else:
-		print("All levels complete!")
+	get_tree().change_scene_to_file(next_level_path)

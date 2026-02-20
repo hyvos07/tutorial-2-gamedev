@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c2snowplatscene"]
+
+[ext_resource type="Texture2D" uid="uid://cbwgix0inp3tk" path="res://assets/snow.png" id="1"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(70.0, 70.0)
+
+[node name="SnowPlatform" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")

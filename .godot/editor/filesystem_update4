@@ -1,2 +1,8 @@
 res://default_env.tres
+res://scenes/Level2.gd
+res://scenes/MainLevel.gd
+res://scenes/ObjectiveArea.gd
+res://scenes/ObjectiveAreaLevel2.gd
+res://scenes/PlatformGreen.gd
+res://scenes/ShipController.gd
 res://scenes/MainLevel.tscn
