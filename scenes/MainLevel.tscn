@@ -13,12 +13,13 @@ size = Vector2(138.75, 79)
 script = ExtResource("5")
 
 [node name="LevelLabel" type="Label" parent="." unique_id=209549015]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 300.0
-offset_bottom = 40.0
+offset_left = 856.0
+offset_top = 8.0
+offset_right = 1146.0
+offset_bottom = 38.0
 theme_override_font_sizes/font_size = 20
 text = "Level 1 - Stone Landing"
+horizontal_alignment = 2
 
 [node name="PlatformBlue" type="Node2D" parent="." unique_id=408998830]
 position = Vector2(35, 565)
